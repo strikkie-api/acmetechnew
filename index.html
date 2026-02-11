@@ -45,7 +45,7 @@ nav a {
 }
 nav a:hover { color: #a0c4ff; text-decoration: underline; }
 
-/* CONTAINER GRID */
+/* GRID CONTAINER */
 .container {
     max-width: 1100px;
     margin: 2rem auto;
@@ -128,33 +128,22 @@ footer {
     margin-top: 2rem;
 }
 
-/* CHAT WIDGET */
-#chat-widget {
+/* CHAT PLACEHOLDER (optional) */
+#chat-widget-placeholder {
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
     width: 320px;
     height: 400px;
-    background: white;
-    border: 1px solid #d1d5db;
+    background: rgba(0,0,0,0.05);
     border-radius: 12px;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    z-index: 9999;
-}
-#chat-header {
-    background: linear-gradient(135deg,#004aad,#00aaff);
-    color: white;
-    padding: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
     font-weight: 600;
-    text-align: center;
+    z-index: 9998;
 }
-#chat-body { flex: 1; padding: 0.75rem; overflow-y: auto; color: #1f2937; font-size: 0.9rem; }
-#chat-input { padding: 0.5rem; display: flex; border-top: 1px solid #e5e7eb; }
-#chat-input input { flex: 1; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid #d1d5db; outline: none; }
-#chat-input button { margin-left: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 6px; border: none; background: linear-gradient(135deg,#004aad,#00aaff); color: white; font-weight: 600; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -209,7 +198,7 @@ footer {
             </div>
             <div class="product-card">
                 <img src="images/tablet3.png" alt="Tablet">
-                <p>Tablets</p>
+                <p>Tablet</p>
             </div>
             <div class="product-card">
                 <img src="images/wearable.png" alt="Wearable">
@@ -244,6 +233,10 @@ footer {
     © 2026 ACME Tech · Customer Support Portal
 </footer>
 
+<!-- Optional placeholder while chat loads -->
+<div id="chat-widget-placeholder">Loading ACME AI Chat...</div>
+
+<!-- Sprinklr Chat Widget -->
 <script>
 window.sprChatSettings = {"appId":"698c4b33509cf30a2aaa85aa_app_2435548","skin":"MODERN"};
 (function () {
@@ -291,11 +284,6 @@ window.sprChatSettings = {"appId":"698c4b33509cf30a2aaa85aa_app_2435548","skin":
     }),
     'loading' !== a.readyState ? i() : a.addEventListener('DOMContentLoaded', i));
 })();
-</script>
-
-
-<script>
-    console.log("Chat widget placeholder ready for your JS");
 </script>
 
 </body>
