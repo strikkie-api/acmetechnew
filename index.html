@@ -50,6 +50,7 @@ section h2 {
 .carousel-container {
     position: relative;
 }
+
 .carousel {
     display: flex;
     overflow-x: auto;
@@ -58,15 +59,27 @@ section h2 {
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
 }
+
+/* Glassy horizontal scrollbar */
 .carousel::-webkit-scrollbar {
-    height: 8px;
+    height: 10px; /* slightly taller for style */
 }
-.carousel::-webkit-scrollbar-thumb {
-    background: #00aaff;
-    border-radius: 4px;
-}
+
 .carousel::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.1); /* translucent track */
+    border-radius: 10px;
+    backdrop-filter: blur(6px); /* frosted glass effect */
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* translucent thumb */
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    transition: background 0.3s ease;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6); /* brighter on hover */
 }
 
 /* Card */
