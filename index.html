@@ -202,20 +202,124 @@ footer {
 <!-- Products Carousel -->
 <section>
     <h2>Pick Your Product</h2>
-    <div class="carousel-container">
-        <button class="carousel-arrow arrow-left" onclick="scrollCarousel('product-carousel', -1)">&#8249;</button>
-        <div id="product-carousel" class="carousel">
-            <div class="card"><img src="images/laptop4.png" alt="Laptop"><p>Laptop</p></div>
-            <div class="card"><img src="images/phone3.png" alt="Smartphone"><p>Smartphone</p></div>
-            <div class="card"><img src="images/tablet3.png" alt="Tablet"><p>Tablet</p></div>
-            <div class="card"><img src="images/wear.png" alt="Wearable"><p>Wearable</p></div>
-            <div class="card"><img src="images/tv.png" alt="Smart Home"><p>Smart Home</p></div>
-            <div class="card"><img src="images/ear.png" alt="Ear Phones"><p>Earphones</p></div>
-            <div class="card"><img src="images/fridge2.png" alt="Kitchen & Home"><p>Kitchen & Home</p></div>
-        </div>
-        <button class="carousel-arrow arrow-right" onclick="scrollCarousel('product-carousel', 1)">&#8250;</button>
+  <div class="carousel-container">
+    <button class="carousel-arrow arrow-left" onclick="scrollCarousel('product-carousel', -1)">&#8249;</button>
+    <div id="product-carousel" class="carousel">
+      <div class="product-card">
+        <img src="images/laptop4.png" alt="Laptop">
+        <p>Laptop</p>
+      </div>
+      <div class="product-card">
+        <img src="images/phone3.png" alt="Smartphone">
+        <p>Smartphone</p>
+      </div>
+      <div class="product-card">
+        <img src="images/tablet3.png" alt="Tablet">
+        <p>Tablet</p>
+      </div>
+      <div class="product-card">
+        <img src="images/wear.png" alt="Wearable">
+        <p>Wearable</p>
+      </div>
+      <div class="product-card">
+        <img src="images/tv.png" alt="Smart Home">
+        <p>Smart Home</p>
+      </div>
+      <div class="product-card">
+        <img src="images/ear.png" alt="Earphones">
+        <p>Earphones</p>
+      </div>
+      <div class="product-card">
+        <img src="images/fridge2.png" alt="Kitchen & Home">
+        <p>Kitchen & Home</p>
+      </div>
     </div>
+    <button class="carousel-arrow arrow-right" onclick="scrollCarousel('product-carousel', 1)">&#8250;</button>
+  </div>
 </section>
+
+<style>
+/* Carousel and Card Styles */
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  margin: 1rem 0;
+}
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.carousel::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: #00aaff;
+  border-radius: 4px;
+}
+.carousel::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+}
+.product-card {
+  flex: 0 0 auto;           /* keep width fixed */
+  width: 140px;             /* uniform width */
+  height: 180px;            /* uniform height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f0f4f8;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.product-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+.product-card p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+.carousel-arrow:hover { background: rgba(0,0,0,0.6); }
+.arrow-left { left: -20px; }
+.arrow-right { right: -20px; }
+</style>
+
+<script>
+function scrollCarousel(id, direction){
+  const carousel = document.getElementById(id);
+  const cardWidth = carousel.querySelector('.product-card').offsetWidth + 16; // include gap
+  carousel.scrollBy({ left: direction * cardWidth * 2, behavior: 'smooth' });
+}
+</script>
+
 
 <!-- Service Status -->
 <section>
