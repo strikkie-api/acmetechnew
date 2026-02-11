@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACME Service Center 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f4f5f7;
+    color: #1f2937;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg,#004aad,#0066cc);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+header::after {
+    content: "";
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.15), transparent);
+}
+header img {
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+header p {
+    margin-top: 0.25rem;
+    font-size: 1rem;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #00337a;
+    padding: 0.75rem;
+}
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+nav a:hover { 
+    text-decoration: underline;
+    color: #a0c4ff;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.card h2 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    background: linear-gradient(90deg,#004aad,#00aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card p { color: #6b7280; }
+.card ul { list-style: none; padding: 0; margin: 0; }
+.card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    transition: color 0.3s ease;
+}
+.card li:last-child { border-bottom: none; }
+.card li:hover { color: #004aad; cursor: pointer; }
+.card img { width: 100%; margin-top: 1rem; border-radius: 8px; transition: transform 0.3s ease; }
+.card img:hover { transform: scale(1.03); }
+
+/* BUTTON */
+.button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg,#004aad,#00aaff);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.button:hover { 
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,170,255,0.4);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* CHAT WIDGET */
+#chat-widget {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 320px;
+    height: 400px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    z-index: 9999;
+}
+#chat-header {
+    background: linear-gradient(135deg,#004aad,#00aaff);
+    color: white;
+    padding: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+#chat-body {
+    flex: 1;
+    padding: 0.75rem;
+    overflow-y: auto;
+    color: #1f2937;
+    font-size: 0.9rem;
+}
+#chat-input {
+    padding: 0.5rem;
+    display: flex;
+    border-top: 1px solid #e5e7eb;
+}
+#chat-input input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    outline: none;
+}
+#chat-input button {
+    margin-left: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: none;
+    background: linear-gradient(135deg,#004aad,#00aaff);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <!-- ACME Logo -->
+    <img src="https://acmetech.sprinklr.com/assets/logo.png" alt="ACME Logo">
+    <h1>ACME Service Center</h1>
+    <p>Customer Support Portal · 2026 Edition</p>
+</header>
+
+<nav>
+    <a href="#">Dashboard</a>
+    <a href="#">Messages</a>
+    <a href="#">Knowledge Base</a>
+    <a href="#">AI Assistant</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Start a Conversation</h2>
+        <p>Use our AI assistant or chat with a live specialist.</p>
+        <a href="#" class="button">Start Chat</a>
+    </div>
+
+    <div class="card">
+        <h2>Knowledge Base</h2>
+        <ul>
+            <li><a href="#">Reset Wi-Fi Router</a></li>
+            <li><a href="#">Wireless Headphones – Quick Fix</a></li>
+            <li><a href="#">Troubleshooting Earbuds</a></li>
+            <li><a href="#">Mobile App Fixes</a></li>
+            <li><a href="#">Product Exchange Process</a></li>
+            <li><a href="#">Choosing the Perfect Monitor</a></li>
+        </ul>
+        <img src="https://via.placeholder.com/400x200?text=Knowledge+Base" alt="Knowledge Base">
+    </div>
+
+    <div class="card">
+        <h2>Product Support</h2>
+        <ul>
+            <li>Laptops</li>
+            <li>Smartphones</li>
+            <li>Wearables</li>
+            <li>Smart Home Devices</li>
+            <li>Audio Equipment</li>
+            <li>Kitchen & Home Appliances</li>
+        </ul>
+        <img src="https://via.placeholder.com/400x200?text=Product+Support" alt="Product Support">
+    </div>
+
+    <div class="card">
+        <h2>Service Status</h2>
+        <p>All systems operational</p>
+        <p>Average response time: <strong>2 min</strong></p>
+        <p>AI auto-resolution rate: <strong>74%</strong></p>
+        <img src="https://via.placeholder.com/400x200?text=Service+Status" alt="Service Status">
+    </div>
+</div>
+
+<footer>
+    © 2026 ACME Tech · Customer Support Portal
+</footer>
+
+<!-- Chat Widget Placeholder -->
+<div id="chat-widget">
+    <div id="chat-header">Chat with ACME AI</div>
+    <div id="chat-body">
+        <p style="color:#6b7280">Chat messages will appear here...</p>
+    </div>
+    <div id="chat-input">
+        <input type="text" placeholder="Type a message...">
+        <button>Send</button>
+    </div>
+</div>
+
+<script>
+    console.log("Chat widget placeholder ready for your JS");
+</script>
+
+</body>
+</html>
