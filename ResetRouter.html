@@ -79,6 +79,13 @@ footer {
         <li>You're setting up the router for a new location</li>
         <li>You're troubleshooting with customer support</li>
     </ul>
+<div class="workflow-cta">
+    <a href="https://forms-prod2.sprinklr.com/guided-workflows/6564301a477e5d2ab65651e9?gwId=865388&viewType=FULL_PAGE" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        Reset Workflow
+    </a>
+</div>
 
     <h2>Reset Options</h2>
 
@@ -125,6 +132,42 @@ footer {
 <footer>
     © 2026 ACME Tech • Customer Support Portal
 </footer>
+<script>
+window.sprChatSettings = {"appId":"698c4b33509cf30a2aaa85aa_app_2435548","skin":"MODERN"};
+(function () {
+  var a,r,n,o,i,s=window,e=s.sprChat;
+  (e && e.loaded) || ((a=document),
+    ((r=function(){r.q.push(arguments)}).q=[]),
+    (s.sprChat=r),
+    (s.sprChat.loaded=!0),
+    (n=0),
+    (o='spr-live-chat-widget'),
+    (i=function(){
+      var e=a.getElementById(o),
+          e=(e&&e.parentNode.removeChild(e),a.createElement('script')),
+          t=(e.type='text/javascript',
+             e.async=!0,
+             e.src='https://prod-live-chat.sprinklr.com/api/livechat/handshake/widget/'+s.sprChatSettings.appId,
+             e.id=o,
+             e.onerror=function(e){
+                var t,a;
+                ++n<=3?setTimeout(i,250):
+                (s.sprChat.loaded=!1,
+                 t='WIDGET_LOAD_FAILED',
+                 a=e,
+                 r.q.map(function(e){
+                    if('subscribeToUpdate'===e[0]&&e[1]&&'loadCompleted'===e[1].topic)
+                        return e[1].subscriber
+                 }).map(function(e){
+                    e&&e({response:{error:!0,errorPayload:{type:t,message:a}}})
+                 }))
+             },
+             a.getElementsByTagName('script')[0]);
+      t.parentNode.insertBefore(e,t);
+    }),
+    'loading'!==a.readyState?i():a.addEventListener('DOMContentLoaded',i));
+})();
+</script>
 
 </body>
 </html>
