@@ -20,12 +20,8 @@ header {
     color: white;
     padding: 2rem 1rem;
     text-align: center;
-    position: relative;
 }
-header img {
-    height: 50px;
-    margin-bottom: 0.5rem;
-}
+header img { height: 50px; margin-bottom: 0.5rem; }
 header h1 { margin: 0; font-size: 2.5rem; }
 header p { margin-top: 0.25rem; font-size: 1rem; }
 
@@ -50,9 +46,22 @@ nav a:hover { color: #a0c4ff; text-decoration: underline; }
     max-width: 1100px;
     margin: 2rem auto;
     padding: 0 1rem;
+}
+
+/* SECTION HEADINGS */
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg,#004aad,#00aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* CARD GRID */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1rem;
 }
 
 /* CARD */
@@ -60,28 +69,25 @@ nav a:hover { color: #a0c4ff; text-decoration: underline; }
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 1.5rem;
+    padding: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
     cursor: pointer;
+    overflow: hidden;
 }
 .card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
-.card h2 {
-    margin-top: 0;
-    font-size: 1.3rem;
-    background: linear-gradient(90deg,#004aad,#00aaff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
 }
-.card p { color: #6b7280; }
-.card img { width: 100%; margin-top: 1rem; border-radius: 8px; transition: transform 0.3s ease; }
 .card img:hover { transform: scale(1.03); }
+.card p { margin: 0; font-weight: 600; color: #1f2937; text-align: center; }
 
-/* BUTTONS */
+/* BUTTON */
 .button {
     display: inline-block;
     margin-top: 1rem;
@@ -98,27 +104,6 @@ nav a:hover { color: #a0c4ff; text-decoration: underline; }
     box-shadow: 0 6px 12px rgba(0,170,255,0.4);
 }
 
-/* PRODUCT GRID */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-.product-card {
-    background: #f0f4f8;
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-.product-card img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 0.5rem; }
-.product-card p { margin: 0; font-weight: 600; }
-
 /* FOOTER */
 footer {
     text-align: center;
@@ -128,7 +113,7 @@ footer {
     margin-top: 2rem;
 }
 
-/* CHAT PLACEHOLDER (optional) */
+/* CHAT PLACEHOLDER */
 #chat-widget-placeholder {
     position: fixed;
     bottom: 1.5rem;
@@ -162,140 +147,134 @@ footer {
     <a href="#">Contact</a>
 </nav>
 
-<div class="container">
-    <!-- Conversation Card -->
-    <div class="card">
+<!-- Conversation -->
+<section class="container">
+    <section>
         <h2>Start a Conversation</h2>
-        <p>Use our AI assistant or chat with a live specialist.</p>
         <a href="#" id="start-chat-btn" class="button">Start Chat</a>
-    </div>
+    </section>
+</section>
 
-    <!-- Knowledge Base -->
-    <div class="card">
+<!-- Knowledge Base -->
+<section class="container">
+    <section>
         <h2>Knowledge Base</h2>
-        <ul>
-            <li><a href="#">Reset Wi-Fi Router</a></li>
-            <li><a href="#">Wireless Headphones – Quick Fix</a></li>
-            <li><a href="#">Troubleshooting Earbuds</a></li>
-            <li><a href="#">Mobile App Fixes</a></li>
-            <li><a href="#">Product Exchange Process</a></li>
-            <li><a href="#">Choosing the Perfect Monitor</a></li>
-        </ul>
-        <img src="images/kb-placeholder.png" alt="Knowledge Base">
-    </div>
+        <div class="grid">
+            <div class="card">
+                <img src="images/kb1.png" alt="Reset Wi-Fi Router">
+                <p>Reset Wi-Fi Router</p>
+            </div>
+            <div class="card">
+                <img src="images/kb2.png" alt="Wireless Headphones">
+                <p>Wireless Headphones – Quick Fix</p>
+            </div>
+            <div class="card">
+                <img src="images/kb3.png" alt="Troubleshooting Earbuds">
+                <p>Troubleshooting Earbuds</p>
+            </div>
+            <div class="card">
+                <img src="images/kb4.png" alt="Mobile App Fixes">
+                <p>Mobile App Fixes</p>
+            </div>
+            <div class="card">
+                <img src="images/kb5.png" alt="Product Exchange Process">
+                <p>Product Exchange Process</p>
+            </div>
+            <div class="card">
+                <img src="images/kb6.png" alt="Choosing the Perfect Monitor">
+                <p>Choosing the Perfect Monitor</p>
+            </div>
+        </div>
+    </section>
+</section>
 
-    <!-- Product Selection -->
-    <div class="card">
+<!-- Products -->
+<section class="container">
+    <section>
         <h2>Pick Your Product</h2>
-        <div class="product-grid">
-            <div class="product-card">
+        <div class="grid">
+            <div class="card">
                 <img src="images/laptop2.png" alt="Laptop">
                 <p>Laptop</p>
             </div>
-            <div class="product-card">
+            <div class="card">
                 <img src="images/phones2.jpeg" alt="Smartphone">
                 <p>Smartphone</p>
             </div>
-            <div class="product-card">
+            <div class="card">
                 <img src="images/tablet3.png" alt="Tablet">
                 <p>Tablet</p>
             </div>
-            <div class="product-card">
+            <div class="card">
                 <img src="images/wearable.png" alt="Wearable">
                 <p>Wearable</p>
             </div>
-            <div class="product-card">
-                <img src="images/smarthome.png" alt="Smart Home Device">
+            <div class="card">
+                <img src="images/smarthome.png" alt="Smart Home">
                 <p>Smart Home</p>
             </div>
-            <div class="product-card">
+            <div class="card">
                 <img src="images/audio.png" alt="Audio Equipment">
                 <p>Audio</p>
             </div>
-            <div class="product-card">
+            <div class="card">
                 <img src="images/kitchen.png" alt="Kitchen & Home">
                 <p>Kitchen & Home</p>
             </div>
         </div>
-    </div>
+    </section>
+</section>
 
-    <!-- Service Status -->
-    <div class="card">
+<!-- Service Status -->
+<section class="container">
+    <section>
         <h2>Service Status</h2>
         <p>All systems operational</p>
         <p>Average response time: <strong>2 min</strong></p>
         <p>AI auto-resolution rate: <strong>74%</strong></p>
         <img src="images/service-status-placeholder.png" alt="Service Status">
-    </div>
-</div>
+    </section>
+</section>
 
 <footer>
     © 2026 ACME Tech · Customer Support Portal
 </footer>
 
-<!-- Optional placeholder while chat loads -->
+<!-- Optional chat placeholder -->
 <div id="chat-widget-placeholder">Loading ACME AI Chat...</div>
 
 <!-- Sprinklr Chat Widget -->
 <script>
 window.sprChatSettings = {"appId":"698c4b33509cf30a2aaa85aa_app_2435548","skin":"MODERN"};
 (function () {
-  var a,
-    r,
-    n,
-    o,
-    i,
-    s = window,
-    e = s.sprChat;
-  (e && e.loaded) ||
-    ((a = document),
-    ((r = function () {
-      r.q.push(arguments);
-    }).q = []),
-    (s.sprChat = r),
-    (s.sprChat.loaded = !0),
-    (n = 0),
-    (o = 'spr-live-chat-widget'),
-    (i = function () {
-      var e = a.getElementById(o),
-        e = (e && e.parentNode.removeChild(e), a.createElement('script')),
-        t =
-          ((e.type = 'text/javascript'),
-          (e.async = !0),
-          (e.src = 'https://prod-live-chat.sprinklr.com/api/livechat/handshake/widget/' + s.sprChatSettings.appId),
-          (e.id = o),
-          (e.onerror = function (e) {
-            var t, a;
-            ++n <= 3
-              ? setTimeout(i, 250)
-              : ((s.sprChat.loaded = !1),
-                (t = 'WIDGET_LOAD_FAILED'),
-                (a = e),
-                r.q
-                  .map(function (e) {
-                    if ('subscribeToUpdate' === e[0] && e[1] && 'loadCompleted' === e[1].topic) return e[1].subscriber;
-                  })
-                  .map(function (e) {
-                    e && e({ response: { error: !0, errorPayload: { type: t, message: a } } });
-                  }));
-          }),
-          a.getElementsByTagName('script')[0]);
-      t.parentNode.insertBefore(e, t);
+  var a,r,n,o,i,s=window,e=s.sprChat;
+  (e && e.loaded) || ((a=document),
+    ((r=function(){r.q.push(arguments)}).q=[]),
+    (s.sprChat=r),
+    (s.sprChat.loaded=!0),
+    (n=0),
+    (o='spr-live-chat-widget'),
+    (i=function(){
+      var e=a.getElementById(o),e=(e&&e.parentNode.removeChild(e),a.createElement('script')),
+      t=(e.type='text/javascript',e.async=!0,e.src='https://prod-live-chat.sprinklr.com/api/livechat/handshake/widget/'+s.sprChatSettings.appId,e.id=o,
+      e.onerror=function(e){var t,a;++n<=3?setTimeout(i,250):(s.sprChat.loaded=!1,t='WIDGET_LOAD_FAILED',a=e,r.q.map(function(e){if('subscribeToUpdate'===e[0]&&e[1]&&'loadCompleted'===e[1].topic)return e[1].subscriber}).map(function(e){e&&e({response:{error:!0,errorPayload:{type:t,message:a}}})}))},a.getElementsByTagName('script')[0]);
+      t.parentNode.insertBefore(e,t);
     }),
-    'loading' !== a.readyState ? i() : a.addEventListener('DOMContentLoaded', i));
+    'loading'!==a.readyState?i():a.addEventListener('DOMContentLoaded',i));
 })();
 </script>
+
+<!-- Start Chat button triggers chat -->
 <script>
 document.getElementById('start-chat-btn').addEventListener('click', function(e){
-    e.preventDefault(); // prevent default link behavior
+    e.preventDefault();
     if(window.sprChat && window.sprChat.open){
-        window.sprChat.open(); // opens the chat widget
+        window.sprChat.open();
     } else {
         console.log("Sprinklr chat not loaded yet");
     }
 });
 </script>
 
-    
 </body>
 </html>
