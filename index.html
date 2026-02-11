@@ -167,7 +167,7 @@ footer {
     <div class="card">
         <h2>Start a Conversation</h2>
         <p>Use our AI assistant or chat with a live specialist.</p>
-        <a href="#" class="button">Start Chat</a>
+        <a href="#" id="start-chat-btn" class="button">Start Chat</a>
     </div>
 
     <!-- Knowledge Base -->
@@ -285,6 +285,17 @@ window.sprChatSettings = {"appId":"698c4b33509cf30a2aaa85aa_app_2435548","skin":
     'loading' !== a.readyState ? i() : a.addEventListener('DOMContentLoaded', i));
 })();
 </script>
+<script>
+document.getElementById('start-chat-btn').addEventListener('click', function(e){
+    e.preventDefault(); // prevent default link behavior
+    if(window.sprChat && window.sprChat.open){
+        window.sprChat.open(); // opens the chat widget
+    } else {
+        console.log("Sprinklr chat not loaded yet");
+    }
+});
+</script>
 
+    
 </body>
 </html>
