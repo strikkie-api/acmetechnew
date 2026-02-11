@@ -244,17 +244,52 @@ footer {
     © 2026 ACME Tech · Customer Support Portal
 </footer>
 
-<!-- Chat Widget Placeholder -->
-<div id="chat-widget">
-    <div id="chat-header">Chat with ACME AI</div>
-    <div id="chat-body">
-        <p style="color:#6b7280">Chat messages will appear here...</p>
-    </div>
-    <div id="chat-input">
-        <input type="text" placeholder="Type a message...">
-        <button>Send</button>
-    </div>
-</div>
+window.sprChatSettings = {"appId":"698c4b33509cf30a2aaa85aa_app_2435548","skin":"MODERN"};
+(function () {
+  var a,
+    r,
+    n,
+    o,
+    i,
+    s = window,
+    e = s.sprChat;
+  (e && e.loaded) ||
+    ((a = document),
+    ((r = function () {
+      r.q.push(arguments);
+    }).q = []),
+    (s.sprChat = r),
+    (s.sprChat.loaded = !0),
+    (n = 0),
+    (o = 'spr-live-chat-widget'),
+    (i = function () {
+      var e = a.getElementById(o),
+        e = (e && e.parentNode.removeChild(e), a.createElement('script')),
+        t =
+          ((e.type = 'text/javascript'),
+          (e.async = !0),
+          (e.src = 'https://prod-live-chat.sprinklr.com/api/livechat/handshake/widget/' + s.sprChatSettings.appId),
+          (e.id = o),
+          (e.onerror = function (e) {
+            var t, a;
+            ++n <= 3
+              ? setTimeout(i, 250)
+              : ((s.sprChat.loaded = !1),
+                (t = 'WIDGET_LOAD_FAILED'),
+                (a = e),
+                r.q
+                  .map(function (e) {
+                    if ('subscribeToUpdate' === e[0] && e[1] && 'loadCompleted' === e[1].topic) return e[1].subscriber;
+                  })
+                  .map(function (e) {
+                    e && e({ response: { error: !0, errorPayload: { type: t, message: a } } });
+                  }));
+          }),
+          a.getElementsByTagName('script')[0]);
+      t.parentNode.insertBefore(e, t);
+    }),
+    'loading' !== a.readyState ? i() : a.addEventListener('DOMContentLoaded', i));
+})();
 
 <script>
     console.log("Chat widget placeholder ready for your JS");
