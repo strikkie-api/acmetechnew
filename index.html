@@ -169,29 +169,11 @@ footer {
         <button class="carousel-arrow arrow-left" onclick="scrollCarousel('kb-carousel', -1)">&#8249;</button>
         <div id="kb-carousel" class="carousel">
                        <div class="card">
-    <a<!-- Modal structure -->
-<div id="kb-modal" style="display:none; position:fixed;top:0;left:0;width:100%;height:100%;background:white;z-index:9999;">
-    <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;z-index:1000;font-size:1.5rem;">✕</button>
-    <iframe id="kb-iframe" src="" style="width:100%;height:100%;border:none;"></iframe>
-</div>
-
-<!-- Card -->
-<div class="card" onclick="openModal('https://acmetech.sprinklr.com/articles/troubleshooting/reset-wifi-router/686eaecb20753412bafc9885')">
-    <img src="images/kb1.png" alt="Reset Wi-Fi Router">
+  <div class="card" onclick="window.open('https://acmetech.sprinklr.com/articles/troubleshooting/reset-wifi-router/686eaecb20753412bafc9885', '_blank')">
+    <img src="images/router.png" alt="Reset Wi-Fi Router">
     <p>Reset Wi-Fi Router</p>
 </div>
 
-<script>
-function openModal(url) {
-    document.getElementById('kb-iframe').src = url;
-    document.getElementById('kb-modal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('kb-iframe').src = '';
-    document.getElementById('kb-modal').style.display = 'none';
-}
-</script>
 
             <div class="card"><img src="images/head2.png" alt="Wireless Headphones"><p>Wireless Headphones – Quick Fix</p></div>
             <div class="card"><img src="images/ear.png" alt="Troubleshooting Earbuds"><p>Troubleshooting Earbuds</p></div>
