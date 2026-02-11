@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ACME Service Center 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 body {
     margin: 0;
@@ -13,8 +12,6 @@ body {
     background: #f4f5f7;
     color: #1f2937;
 }
-
-/* HEADER */
 header {
     background: linear-gradient(135deg,#004aad,#0066cc);
     color: white;
@@ -25,7 +22,6 @@ header img { height: 50px; margin-bottom: 0.5rem; }
 header h1 { margin: 0; font-size: 2.5rem; }
 header p { margin-top: 0.25rem; font-size: 1rem; }
 
-/* NAV */
 nav {
     display: flex;
     justify-content: center;
@@ -41,14 +37,7 @@ nav a {
 }
 nav a:hover { color: #a0c4ff; text-decoration: underline; }
 
-/* GRID CONTAINER */
-.container {
-    max-width: 1100px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-/* SECTION HEADINGS */
+section { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
 section h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
@@ -57,15 +46,28 @@ section h2 {
     -webkit-text-fill-color: transparent;
 }
 
-/* CARD GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+/* Carousel container */
+.carousel {
+    display: flex;
+    overflow-x: auto;
     gap: 1rem;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+}
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel::-webkit-scrollbar-thumb {
+    background: #00aaff;
+    border-radius: 4px;
+}
+.carousel::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
 }
 
-/* CARD */
+/* Card */
 .card {
+    flex: 0 0 220px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -85,9 +87,9 @@ section h2 {
     transition: transform 0.3s ease;
 }
 .card img:hover { transform: scale(1.03); }
-.card p { margin: 0; font-weight: 600; color: #1f2937; text-align: center; }
+.card p { margin: 0; font-weight: 600; text-align: center; }
 
-/* BUTTON */
+/* Button */
 .button {
     display: inline-block;
     margin-top: 1rem;
@@ -104,30 +106,12 @@ section h2 {
     box-shadow: 0 6px 12px rgba(0,170,255,0.4);
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 2rem 1rem;
     color: #6b7280;
     font-size: 0.9rem;
     margin-top: 2rem;
-}
-
-/* CHAT PLACEHOLDER */
-#chat-widget-placeholder {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 320px;
-    height: 400px;
-    background: rgba(0,0,0,0.05);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6b7280;
-    font-weight: 600;
-    z-index: 9998;
 }
 </style>
 </head>
@@ -147,101 +131,90 @@ footer {
     <a href="#">Contact</a>
 </nav>
 
-<!-- Conversation -->
-<section class="container">
-    <section>
-        <h2>Start a Conversation</h2>
-        <a href="#" id="start-chat-btn" class="button">Start Chat</a>
-    </section>
+<!-- Start Chat -->
+<section>
+    <h2>Start a Conversation</h2>
+    <a href="#" id="start-chat-btn" class="button">Start Chat</a>
 </section>
 
-<!-- Knowledge Base -->
-<section class="container">
-    <section>
-        <h2>Knowledge Base</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="images/kb1.png" alt="Reset Wi-Fi Router">
-                <p>Reset Wi-Fi Router</p>
-            </div>
-            <div class="card">
-                <img src="images/kb2.png" alt="Wireless Headphones">
-                <p>Wireless Headphones – Quick Fix</p>
-            </div>
-            <div class="card">
-                <img src="images/kb3.png" alt="Troubleshooting Earbuds">
-                <p>Troubleshooting Earbuds</p>
-            </div>
-            <div class="card">
-                <img src="images/kb4.png" alt="Mobile App Fixes">
-                <p>Mobile App Fixes</p>
-            </div>
-            <div class="card">
-                <img src="images/kb5.png" alt="Product Exchange Process">
-                <p>Product Exchange Process</p>
-            </div>
-            <div class="card">
-                <img src="images/kb6.png" alt="Choosing the Perfect Monitor">
-                <p>Choosing the Perfect Monitor</p>
-            </div>
+<!-- Knowledge Base Carousel -->
+<section>
+    <h2>Knowledge Base</h2>
+    <div class="carousel">
+        <div class="card">
+            <img src="images/kb1.png" alt="Reset Wi-Fi Router">
+            <p>Reset Wi-Fi Router</p>
         </div>
-    </section>
+        <div class="card">
+            <img src="images/kb2.png" alt="Wireless Headphones">
+            <p>Wireless Headphones – Quick Fix</p>
+        </div>
+        <div class="card">
+            <img src="images/kb3.png" alt="Troubleshooting Earbuds">
+            <p>Troubleshooting Earbuds</p>
+        </div>
+        <div class="card">
+            <img src="images/kb4.png" alt="Mobile App Fixes">
+            <p>Mobile App Fixes</p>
+        </div>
+        <div class="card">
+            <img src="images/kb5.png" alt="Product Exchange Process">
+            <p>Product Exchange Process</p>
+        </div>
+        <div class="card">
+            <img src="images/kb6.png" alt="Choosing the Perfect Monitor">
+            <p>Choosing the Perfect Monitor</p>
+        </div>
+    </div>
 </section>
 
-<!-- Products -->
-<section class="container">
-    <section>
-        <h2>Pick Your Product</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="images/laptop4.png" alt="Laptop">
-                <p>Laptop</p>
-            </div>
-            <div class="card">
-                <img src="images/phone4.jpeg" alt="Smartphone">
-                <p>Smartphone</p>
-            </div>
-            <div class="card">
-                <img src="images/tablet3.png" alt="Tablet">
-                <p>Tablet</p>
-            </div>
-            <div class="card">
-                <img src="images/wear.png" alt="Wearable">
-                <p>Wearable</p>
-            </div>
-            <div class="card">
-                <img src="images/tv.png" alt="Smart Home">
-                <p>Smart Home</p>
-            </div>
-            <div class="card">
-                <img src="images/audio.png" alt="Audio Equipment">
-                <p>Audio</p>
-            </div>
-            <div class="card">
-                <img src="images/kitchen.png" alt="Kitchen & Home">
-                <p>Kitchen & Home</p>
-            </div>
+<!-- Products Carousel -->
+<section>
+    <h2>Pick Your Product</h2>
+    <div class="carousel">
+        <div class="card">
+            <img src="images/laptop2.png" alt="Laptop">
+            <p>Laptop</p>
         </div>
-    </section>
+        <div class="card">
+            <img src="images/phone2.png" alt="Smartphone">
+            <p>Smartphone</p>
+        </div>
+        <div class="card">
+            <img src="images/tablet3.png" alt="Tablet">
+            <p>Tablet</p>
+        </div>
+        <div class="card">
+            <img src="images/wear.png" alt="Wearable">
+            <p>Wearable</p>
+        </div>
+        <div class="card">
+            <img src="images/tv.png" alt="Smart Home">
+            <p>Smart Home</p>
+        </div>
+        <div class="card">
+            <img src="images/audio.png" alt="Audio Equipment">
+            <p>Audio</p>
+        </div>
+        <div class="card">
+            <img src="images/kitchen.png" alt="Kitchen & Home">
+            <p>Kitchen & Home</p>
+        </div>
+    </div>
 </section>
 
 <!-- Service Status -->
-<section class="container">
-    <section>
-        <h2>Service Status</h2>
-        <p>All systems operational</p>
-        <p>Average response time: <strong>2 min</strong></p>
-        <p>AI auto-resolution rate: <strong>74%</strong></p>
-        <img src="images/service-status-placeholder.png" alt="Service Status">
-    </section>
+<section>
+    <h2>Service Status</h2>
+    <p>All systems operational</p>
+    <p>Average response time: <strong>2 min</strong></p>
+    <p>AI auto-resolution rate: <strong>74%</strong></p>
+    <img src="images/service-status-placeholder.png" alt="Service Status">
 </section>
 
 <footer>
     © 2026 ACME Tech · Customer Support Portal
 </footer>
-
-<!-- Optional chat placeholder -->
-<div id="chat-widget-placeholder">Loading ACME AI Chat...</div>
 
 <!-- Sprinklr Chat Widget -->
 <script>
