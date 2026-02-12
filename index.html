@@ -216,6 +216,37 @@ footer {
     color: white;
     transform: translateY(-3px);
 }
+.kb-card {
+    width: 160px;      /* slightly wider than product cards */
+    height: 200px;     /* taller for better visual */
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.kb-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+.kb-card p {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: auto;  /* keeps text aligned at bottom */
+    text-align: center;
+}
+.kb-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
 
 </style>
 </head>
@@ -267,27 +298,27 @@ footer {
     <div class="carousel-container">
         <button class="carousel-arrow arrow-left" onclick="scrollCarousel('kb-carousel', -1)">&#8249;</button>
         <div class="carousel" id="kb-carousel">
-            <div class="card" onclick="window.location.href='ResetRouter.html'">
+            <div class="card kb-card" onclick="window.open('https://acmetech.sprinklr.com/articles/troubleshooting/reset-wifi-router/686eaecb20753412bafc9885','_blank')">
                 <img src="images/router.png" alt="Reset Wi-Fi Router">
                 <p>Reset Wi-Fi Router</p>
             </div>
-            <div class="card" onclick="window.open('https://acmetech.sprinklr.com/articles/earphones-earbuds/wireless-headphones-quick-fix-guide/6836bb31a6fe4f29b34f7efc','_blank')">
+            <div class="card kb-card" onclick="window.open('https://acmetech.sprinklr.com/articles/earphones-earbuds/wireless-headphones-quick-fix-guide/6836bb31a6fe4f29b34f7efc','_blank')">
                 <img src="images/head2.png" alt="Wireless Headphones">
                 <p>Wireless Headphones – Quick Fix</p>
             </div>
-            <div class="card" onclick="window.open('https://acmetech.sprinklr.com/articles/earphones-earbuds/troubleshooting-wireless-earbuds-quick-fix-guide/681cac8196a3933e5333d548','_blank')">
+            <div class="card kb-card" onclick="window.open('https://acmetech.sprinklr.com/articles/earphones-earbuds/troubleshooting-wireless-earbuds-quick-fix-guide/681cac8196a3933e5333d548','_blank')">
                 <img src="images/ear.png" alt="Troubleshooting Earbuds">
                 <p>Troubleshooting Earbuds</p>
             </div>
-            <div class="card" onclick="window.open('https://acmetech.sprinklr.com/articles/app-support/your-essential-guide-how-to-fix-common-issues-with-mobile-apps/649e690f564e3e25f803f76e','_blank')">
+            <div class="card kb-card" onclick="window.open('https://acmetech.sprinklr.com/articles/app-support/your-essential-guide-how-to-fix-common-issues-with-mobile-apps/649e690f564e3e25f803f76e','_blank')">
                 <img src="images/trouble.png" alt="Mobile App Fixes">
                 <p>Mobile App Fixes</p>
             </div>
-            <div class="card" onclick="window.open('https://acmetech.sprinklr.com/articles/remboursement-et-retour/your-comprehensive-guide-navigating-the-product-exchange-process/649e68fe564e3e25f803f76a','_blank')">
+            <div class="card kb-card" onclick="window.open('https://acmetech.sprinklr.com/articles/remboursement-et-retour/your-comprehensive-guide-navigating-the-product-exchange-process/649e68fe564e3e25f803f76a','_blank')">
                 <img src="images/replace.png" alt="Product Exchange Process">
                 <p>Product Exchange Process</p>
             </div>
-            <div class="card" onclick="window.open('https://acmetech.sprinklr.com/articles/product-recommendation/your-comprehensive-guide-choosing-the-perfect-monitor-for-your-needs/649e6908efca565f6513c137','_blank')">
+            <div class="card kb-card" onclick="window.open('https://acmetech.sprinklr.com/articles/product-recommendation/your-comprehensive-guide-choosing-the-perfect-monitor-for-your-needs/649e6908efca565f6513c137','_blank')">
                 <img src="images/pick.png" alt="Choosing the Perfect Monitor">
                 <p>Choosing the Perfect Monitor</p>
             </div>
@@ -295,6 +326,7 @@ footer {
         <button class="carousel-arrow arrow-right" onclick="scrollCarousel('kb-carousel', 1)">&#8250;</button>
     </div>
 </section>
+
 
 <!-- Products Carousel -->
 <section>
