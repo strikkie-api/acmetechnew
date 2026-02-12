@@ -171,6 +171,52 @@ footer {
     font-size: 0.9rem;
     margin-top: 2rem;
 }
+    .cta-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.cta-btn {
+    padding: 0.9rem 1.6rem;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    text-align: center;
+}
+
+/* Primary = original Start Chat */
+.cta-btn.primary {
+    background: linear-gradient(135deg,#004aad,#00aaff);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.35);
+}
+
+.cta-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 170, 255, 0.55);
+}
+
+/* Inverted buttons */
+.cta-btn.inverted {
+    background: white;
+    color: #004aad;
+    border: 2px solid #004aad;
+}
+
+.cta-btn.inverted:hover {
+    background: #004aad;
+    color: white;
+    transform: translateY(-3px);
+}
+
 </style>
 </head>
 <body>
@@ -189,11 +235,31 @@ footer {
     <a href="#">Contact</a>
 </nav>
 
-<!-- Start Chat -->
-<section>
-    <h2>Start a Conversation</h2>
-    <a href="#" id="start-chat-btn" class="button">Start Chat</a>
-</section>
+<!-- buttons on top -->
+<div class="cta-row">
+
+    <button class="cta-btn primary" onclick="window.sprChat.open()">
+        Troubleshooting
+    </button>
+
+    <a href="articles/routertroubleshoot.html" class="cta-btn inverted">
+        Product Recommendation
+    </a>
+
+    <a href="articles/headphones.html" class="cta-btn inverted">
+        Refund & Return
+    </a>
+
+    <a href="articles/mobileapp.html" class="cta-btn inverted">
+        App Support
+    </a>
+
+    <a href="contact.html" class="cta-btn inverted">
+        Contact Support
+    </a>
+
+</div>
+
 
 <!-- Knowledge Base Carousel -->
 <section>
@@ -291,5 +357,6 @@ function scrollCarousel(id, direction){
     carousel.scrollBy({ left: direction * cardWidth * 2, behavior: 'smooth' });
 }
 </script>
+    
 </body>
 </html>
